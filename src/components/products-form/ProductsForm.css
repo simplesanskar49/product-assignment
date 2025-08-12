@@ -1,0 +1,41 @@
+.product-form {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.product-form .form-actions {
+  margin-top: 1rem;
+}
+
+.product-form button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.product-form button:hover {
+  background-color: #0056b3;
+}
+
+.product-form button.cancel-btn {
+  background-color: #6c757d;
+}
+
+.product-form button.cancel-btn:hover {
+  background-color: #5a6268;
+}
+
+.product-form .error-text {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
