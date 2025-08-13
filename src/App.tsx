@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Product } from "./types";
 import { PRODUCTS_DATA } from "./data";
-import { Modal, Pagination, ProductList, ProductsCard, ProductsForm, SearchBar, Toggle } from "./components";
+import { Button, Modal, Pagination, ProductList, ProductsCard, ProductsForm, SearchBar, Toggle } from "./components";
 import { toast, ToastContainer } from "react-toastify";
 
 function App() {
@@ -53,11 +53,16 @@ function App() {
   return (
     <div>
       <h1>Products</h1>
-      <SearchBar onSearch={setSearchValue} />
-      <Toggle view={view} onToggle={setView} />
-      <button onClick={() => createNewProduct()}>
+      <Button onClick={() => createNewProduct()}>
         Add Product
-      </button>
+      </Button>
+      <SearchBar
+        onSearch={(value) => {
+          setSearchValue(value);
+          setCurrentPage(1);
+        }}
+      />
+      <Toggle view={view} onToggle={setView} />
 
       {view === "list" ? (
         <ProductList products={paginated} onEdit={setEditingProduct} />

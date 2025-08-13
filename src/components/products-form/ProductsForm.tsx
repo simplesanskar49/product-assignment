@@ -1,6 +1,7 @@
 import React, { useState, useEffect, FC } from "react";
 import type { Product } from "../../types";
 import { TextField } from "../text-field";
+import { Button } from "../button";
 
 import "./ProductsForm.css";
 
@@ -105,15 +106,13 @@ const ProductsForm: FC<ProductsFormProps> = ({ initialData, onSave, onCancel }) 
       />
 
       <div className="form-actions">
-        <button type="submit">Save</button>
-        <button
-          type="button"
-          className="cancel-btn"
+        <Button type="submit" variant="save">Save</Button>
+        <Button
           onClick={onCancel}
-          style={{ marginLeft: "0.5rem" }}
+          variant="cancel"
         >
           Cancel
-        </button>
+        </Button>
       </div>
     </form>
   );

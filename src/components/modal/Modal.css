@@ -32,10 +32,3 @@
 .modal-header h2 {
   margin: 0;
 }
-
-.modal-close {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-}

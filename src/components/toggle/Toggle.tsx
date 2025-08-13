@@ -1,4 +1,7 @@
 import { FC } from "react";
+import { Button } from "../button";
+
+import "./Toggle.css"
 
 interface ToggleProps {
     view: "list" | "grid";
@@ -7,21 +10,21 @@ interface ToggleProps {
 
 const Toggle: FC<ToggleProps> = ({ view, onToggle }) => {
     return (
-        <div>
-            <button
+        <div className="toggle-container">
+            <Button
                 onClick={() => onToggle("list")}
                 disabled={view === "list"}
             >
                 List View
-            </button>
-            <button
+            </Button>
+            <Button
                 onClick={() => onToggle("grid")}
                 disabled={view === "grid"}
             >
                 Grid View
-            </button>
+            </Button>
         </div>
     );
 }
 
-export { Toggle }
+export { Toggle };

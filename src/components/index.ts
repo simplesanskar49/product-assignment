@@ -6,3 +6,4 @@ export { ProductList } from './products-list';
 export { ProductsCard } from './products-card';
 export { ProductsForm } from './products-form';
 export { Modal } from './modal';
+export { Button } from './button'

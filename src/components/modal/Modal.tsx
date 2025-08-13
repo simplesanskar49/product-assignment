@@ -1,4 +1,6 @@
 import { FC, ReactNode } from "react";
+import { Button } from "../button";
+
 import "./Modal.css";
 
 interface ModalProps {
@@ -16,9 +18,9 @@ const Modal: FC<ModalProps> = ({ title, isOpen, onClose, children }) => {
       <div className="modal-content">
         <div className="modal-header">
           <h2>{title}</h2>
-          <button className="modal-close" onClick={onClose}>
+          <Button onClick={onClose} variant="secondary">
             X
-          </button>
+          </Button>
         </div>
         {children}
       </div>

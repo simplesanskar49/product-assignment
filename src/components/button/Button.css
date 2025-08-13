@@ -1,0 +1,49 @@
+.btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border: none;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btn.primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn.primary:hover:not(:disabled) {
+    background-color: #0069d9;
+}
+
+.btn.secondary {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.btn.secondary:hover:not(:disabled) {
+    background-color: #d5d5d5;
+}
+
+.btn.save {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn.save:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+.btn.cancel {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn.cancel:hover:not(:disabled) {
+    background-color: #c82333;
+}

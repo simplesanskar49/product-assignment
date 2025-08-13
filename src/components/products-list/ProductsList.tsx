@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Product } from "../../types";
+import { Button } from "../button";
 
 import "./ProductsList.css"
 
@@ -22,7 +23,7 @@ const ProductList: FC<ProductListProps> = ({ products, onEdit }) => {
             <td>Rs. {p.price}</td>
             <td>{p.category}</td>
             <td>{p.stock}</td>
-            <td><button onClick={() => onEdit(p)}>Edit</button></td>
+            <td><Button variant="secondary" onClick={() => onEdit(p)}>Edit</Button></td>
           </tr>
         ))}
       </tbody>

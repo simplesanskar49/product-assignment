@@ -1,5 +1,7 @@
 import { FC } from "react";
 import { Product } from "../../types";
+import { Button } from "../button";
+
 import "./ProductsCard.css";
 
 interface ProductsCardProps {
@@ -16,7 +18,7 @@ const ProductsCard: FC<ProductsCardProps> = ({ products, onEdit }) => {
           <p>Rs. {p.price}</p>
           <p>{p.category}</p>
           <p>Stock: {p.stock}</p>
-          <button onClick={() => onEdit(p)}>Edit</button>
+          <Button variant="secondary" onClick={() => onEdit(p)}>Edit</Button>
         </div>
       ))}
     </div>
