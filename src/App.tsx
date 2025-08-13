@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Product } from "./types";
 import { PRODUCTS_DATA } from "./data";
 import { Modal, Pagination, ProductList, ProductsCard, ProductsForm, SearchBar, Toggle } from "./components";
+import { toast, ToastContainer } from "react-toastify";
 
 function App() {
   const [products, setProducts] = useState<Product[]>(PRODUCTS_DATA);
@@ -9,7 +10,7 @@ function App() {
   const [searchValue, setSearchValue] = useState<string>("");
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 5;
 
   const filtered = products.filter((p) =>
     p.name.toLowerCase().includes(searchValue.toLowerCase())
@@ -27,6 +28,14 @@ function App() {
         return [...prev, product];
       }
     });
+
+    const exists = products.find((p) => p.id === product.id);
+    if (exists) {
+      toast.success("Product Edited");
+    } else {
+      toast.success("Product Added");
+    }
+
     setEditingProduct(null);
   };
 
@@ -71,6 +80,7 @@ function App() {
           />
         )}
       </Modal>
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 }

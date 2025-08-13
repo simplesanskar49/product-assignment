@@ -13,7 +13,7 @@ const ProductsCard: FC<ProductsCardProps> = ({ products, onEdit }) => {
       {products.map((p) => (
         <div key={p.id} className="product-card">
           <h3>{p.name}</h3>
-          <p>₹{p.price}</p>
+          <p>Rs. {p.price}</p>
           <p>{p.category}</p>
           <p>Stock: {p.stock}</p>
           <button onClick={() => onEdit(p)}>Edit</button>
